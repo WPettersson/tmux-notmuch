@@ -8,9 +8,9 @@ source "$CURRENT_DIR/helpers.sh"
 main() {
   local units
   tags=$(get_tmux_option "@notmuch_tags" "tag:unread")
-  local out=$(notmuch search ${tags})
+  local out=$(notmuch count ${tags})
   if [ "${out}" -ge 1 ] ; then
-    echo "📬 ${out}"
+    printf "${out}📬 "
   fi
 }
 main
