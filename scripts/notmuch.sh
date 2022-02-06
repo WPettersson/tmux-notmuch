@@ -10,7 +10,7 @@ main() {
   tags=$(get_tmux_option "@notmuch_tags" "tag:unread")
   local out=$(notmuch count ${tags})
   if [ "${out}" -ge 1 ] ; then
-    printf "${out}"
+    printf "📬 ${out} "
   fi
 }
 main
